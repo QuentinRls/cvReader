@@ -77,16 +77,27 @@ function CvReader({ onResult, onClear }) {
     if (!data || !data.analysis) return null;
 
     const lines = data.analysis.split("\n");
-    return lines.map((line, index) => {
+    const resultComponents = [];
+    let currentBox = [];
+
+    lines.forEach((line, index) => {
       if (line.startsWith("**") && line.endsWith("**")) {
+        if (currentBox.length > 0) {
+          resultComponents.push(
+            <div key={`box-${index}`} className="result-box">
+              {currentBox}
+            </div>
+          );
+          currentBox = [];
+        }
         const title = line.slice(2, -2).trim();
-        return (
+        currentBox.push(
           <h2 key={index} className="result-title">
             {title}
           </h2>
         );
       } else if (line.startsWith("- ")) {
-        return (
+        currentBox.push(
           <li key={index} className="result-list-item">
             {line.slice(2).trim()}
           </li>
@@ -94,55 +105,67 @@ function CvReader({ onResult, onClear }) {
       } else if (line.includes("%")) {
         const percentage = line.match(/\d+%/)[0];
         const value = parseInt(percentage, 10);
-        return (
-            <div key={index} className="progress-bar-container">
-              <CircularProgressbar
-                value={value}
-                text={`${percentage}`}
-                styles={buildStyles({
-                  textSize: '16px',
-                  pathColor: `rgba(127, 255, 212, ${value / 100})`,
-                  textColor: '#ffff',
-                  trailColor: '#d6d6d6',
-                  backgroundColor: '#3e98c7',
-                })}
-              />
-            </div>
+        currentBox.push(
+          <div key={index} className="progress-bar-container">
+            <CircularProgressbar
+              value={value}
+              text={`${percentage}`}
+              styles={buildStyles({
+                textSize: '16px',
+                pathColor: `rgba(127, 255, 212, ${value / 100})`,
+                textColor: '#ffff',
+                trailColor: '#d6d6d6',
+                backgroundColor: '#3e98c7',
+              })}
+            />
+          </div>
+        );
+      } else {
+        currentBox.push(
+          <p key={index} className="result-paragraph">
+            {line}
+          </p>
         );
       }
-      return (
-        <p key={index} className="result-paragraph">
-          {line}
-        </p>
-      );
     });
+
+    if (currentBox.length > 0) {
+      resultComponents.push(
+        <div key={`box-${lines.length}`} className="result-box">
+          {currentBox}
+        </div>
+      );
+    }
+
+    return resultComponents;
   };
 
   return (
     <div className="form-container">
-      <h1>Vérificateur et Évaluateur de CV par IA Gratuit</h1>
-      {result ? (
+      <h1>Évaluateur CV / Mission par IA</h1>
+      {result && (
         <div className="result-container">
-          <h1>Résultat de l'analyse :</h1>
-          <div>{formatResult(result)}</div>
-          <button onClick={handleClear} className="clear-btn">Effacer</button>
+          <div className="result-boxes">{formatResult(result)}</div>
         </div>
-      ) : (
-        <form onSubmit={handleSubmit} className="form">
-          <div className="upload-box">
-            <label htmlFor="fileInput">
-              {file ? file.name : "Cliquez pour télécharger ou glissez et déposez votre CV ici"}
-              <br />
-              <span>{file ? "" : "PDF ou DOCX"}</span>
-            </label>
-            <input
-              id="fileInput"
-              type="file"
-              accept=".pdf,.docx"
-              onChange={handleFileChange}
-              required
-            />
-          </div>
+      )}
+      <form onSubmit={handleSubmit} className="form">
+        <div className='images-container'>
+          {!fileURL && (
+            <div className="upload-box">
+              <label htmlFor="fileInput">
+                Cliquez pour télécharger ou glissez et déposez votre CV ici
+                <br />
+                <span>{file ? "" : "PDF ou DOCX"}</span>
+              </label>
+              <input
+                id="fileInput"
+                type="file"
+                accept=".pdf,.docx"
+                onChange={handleFileChange}
+                required
+              />
+            </div>
+          )}
           {fileURL && (
             <div className="pdf-preview">
               <iframe
@@ -153,27 +176,18 @@ function CvReader({ onResult, onClear }) {
               ></iframe>
             </div>
           )}
-          <div className="job-box">
-            <label htmlFor="jobPosition" className="form-label">
-              Poste recherché (optionnel) :
-            </label>
-            <textarea
-              id="jobPosition"
-              type="text"
-              placeholder="Entrez le poste recherché (ex : Développeur Web)"
-              value={jobPosition}
-              onChange={(e) => setJobPosition(e.target.value)}
-            />
-          </div>
-          <div className="mission-box">
+          vs
+          <div className="upload-box">
             <input
               id="missionFile"
               type="file"
               accept="image/*"
               onChange={handleMissionFileChange}
             />
-            <label htmlFor="missionFile" className="form-label">
-              Ou téléchargez une image décrivant la mission
+            <label htmlFor="missionFile">
+              Cliquez pour télécharger ou glissez et déposez votre mission ici
+              <br />
+              <span>{file ? "" : "JPEG / PNG / PDF"}</span>
             </label>
             {missionFileURL && (
               <div className="image-preview">
@@ -181,13 +195,30 @@ function CvReader({ onResult, onClear }) {
               </div>
             )}
           </div>
+        </div>
+        <div className="job-box">
+          <label htmlFor="jobPosition" className="form-label">
+            Poste recherché (optionnel) :
+          </label>
+          <textarea
+            id="jobPosition"
+            type="text"
+            placeholder="Entrez le poste recherché (ex : Développeur Web)"
+            value={jobPosition}
+            onChange={(e) => setJobPosition(e.target.value)}
+          />
+        </div>
+        <div className="button-container">
           <button type="submit" className="analyze-btn" disabled={loading}>
-            {loading ? <Loader /> : "Analysez Mon CV"}
+            {loading ? <Loader /> : "Comparer le CV a la mission"}
           </button>
-        </form>
-      )}
+          <button onClick={handleClear} className="clear-btn" disabled={!file && !missionFile}>
+            Clear
+          </button>
+        </div>
+      </form>
     </div>
   );
 }
 
-export default CvReader;
+export default CvReader;  
