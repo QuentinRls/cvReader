@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/cvReader/static/css/main.431bd76b.css",
+    "main.js": "/cvReader/static/js/main.e37343ab.js",
+    "index.html": "/cvReader/index.html",
+    "main.431bd76b.css.map": "/cvReader/static/css/main.431bd76b.css.map",
+    "main.e37343ab.js.map": "/cvReader/static/js/main.e37343ab.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.431bd76b.css",
+    "static/js/main.e37343ab.js"
+  ]
+}
