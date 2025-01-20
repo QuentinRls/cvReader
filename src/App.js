@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import CvReader from '../src/cvReader';
+import { trackPageView } from './analytics';
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    trackPageView(location.pathname + location.search);
+  }, [location]);
+
   const handleResult = (data) => {
     console.log("Résultat de l'analyse :", data);
   };
