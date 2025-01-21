@@ -1,0 +1,39 @@
+textarea {
+    width: 97%;
+    padding: 10px;
+    background-color: rgba(22, 57, 48, 0.712);
+    border: 1px solid #ddd;
+    color: #d1d1d1;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: Arial, sans-serif; /* Appliquez la même police que celle du site */
+    transition: border-color 0.3s;
+    resize: vertical; /* Permet de redimensionner verticalement */
+    min-height: 100px; /* Hauteur minimale */
+}
+
+textarea:focus {
+    border-color: #7fffd49e;
+    outline: none;
+}
+
+.job-box {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.job-box label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #7fffd49e;
+}
+
+.job-box input {
+    align-self: center;
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: Arial, sans-serif; /* Appliquez la même police que celle du site */
+}

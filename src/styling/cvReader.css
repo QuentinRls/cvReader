@@ -1,0 +1,95 @@
+.form-container {
+    min-width: 200px;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.form {
+    width: 100%;
+    align-items: center;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.result-container {
+    text-align: center;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: rgb(10 47 47 / 78%);
+    border-radius: 10px;
+}
+
+.result-container h1 {
+    font-size: 24px;
+    color: aquamarine;
+    margin-bottom: 20px;
+}
+
+.result-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espace entre les boîtes */
+}
+
+.result-box {
+    background: #1a1a1a;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 20px); /* Ajustez la largeur des boîtes */
+    box-sizing: border-box;
+}
+
+.result-boxes {
+    display: contents;
+}
+
+.BlobTitle {
+    align-items: center;
+    display: inline-flex;
+}
+
+.thinking {
+  width: 50px;
+  aspect-ratio: 1;
+  background: #0e3031;
+  border-radius: 50%;
+  animation: l1 3s infinite linear;
+}
+@keyframes l1{
+  12.5%  {border-radius: 45% 55% 65% 35% / 40% 60% 40% 60%}
+  25%    {border-radius: 50% 55% 35% 70% / 35% 38% 83% 72%}
+  37.5%  {border-radius: 43% 70% 42% 84% / 72% 57% 52% 84%}
+  50%    {border-radius: 37% 72% 81% 28% / 45% 72% 84% 56%}
+  62.5%  {border-radius: 30% 40% 46% 62% / 46% 27% 58% 63%}
+  75%    {border-radius: 38% 60% 35% 80% / 25% 39% 44% 54%}
+  87.5%  {border-radius: 41% 88% 96% 53% / 42% 66% 43% 35%}
+}
+
+  /* HTML: <div class="loader"></div> */
+.thinking2 {
+  width: 50px;
+  aspect-ratio: 1;
+  background: #0e3031;
+  border-radius: 50%;
+  animation: l2 3s infinite linear;
+}
+@keyframes l2{
+  12.5% {border-radius: 37% 63% 70% 30% / 30% 62% 38% 70%}
+  25%   {border-radius: 50% 50% 70% 30% / 52% 62% 38% 48%}
+  37.5% {border-radius: 33% 67% 18% 82% / 52% 75% 25% 48%}
+  50%   {border-radius: 73% 27% 18% 82% / 52% 32% 68% 48%}
+  62.5% {border-radius: 73% 27% 74% 26% / 64% 32% 68% 36%}
+  75%   {border-radius: 84% 16% 15% 85% / 55% 79% 28% 45%}
+  87.5% {border-radius: 42% 88% 69% 31% / 30% 66% 34% 90%}
+}

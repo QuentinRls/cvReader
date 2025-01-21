@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, useLocation } from 'react-router-dom';
 import './App.css';
-import CvReader from '../src/cvReader';
+import CvReader from '../src/components/cvReader';
 import { trackPageView } from './analytics';
 
 function App() {
@@ -20,6 +20,9 @@ function App() {
       <header className="App-header">
         <CvReader onResult={handleResult} />
       </header>
+      <div className="wave"></div>
+      <div className="wave"></div>
+      <div className="wave"></div>
     </div>
   );
 }
@@ -32,4 +35,4 @@ function AppWrapper() {
   );
 }
 
-export default AppWrapper;  
+export default AppWrapper;

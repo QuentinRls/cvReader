@@ -1,0 +1,61 @@
+.analyze-btn {
+    background-color: rgb(10 47 47 / 78%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.analyze-btn:disabled {
+    background-color: #cccccc;
+    /* Couleur grise pour l'état désactivé */
+    cursor: wait;
+    color: #666666;
+}
+
+.analyze-btn:hover {
+    background-color: rgba(10, 47, 47, 0.925);
+    transform: scale(1.05);
+}
+
+.clear-btn {
+    background-color: #0d3841;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.clear-btn:hover {
+    background-color: #8f3956;
+    transform: scale(1.05);
+}
+
+.clear-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    color: #666666;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espace entre les boutons */
+    margin-top: 20px;
+}
