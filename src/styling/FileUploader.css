@@ -1,6 +1,5 @@
 .upload-box {
     width: 40%;
-    border: 2px dashed #7fffd49e;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -9,18 +8,22 @@
     transition: background-color 0.3s, border-color 0.3s, transform 0.5s ease, box-shadow 0.5s ease;
     position: relative;
     overflow: hidden;
+    border: 2px dashed var(--border-color, #7fffd49e);
+    color: var(--color, #000);
+    padding: 10px;
+    transition: all 0.3s ease;
 }
 
 .upload-box:hover {
     background-color: #1e1f21;
-    border-color: #7fffd49e;
     transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    box-shadow: 0 0 20px var(--hover-border-color, #7fffd49e);
+    border-color: var(--hover-border-color, #7fffd49e);
+    background-color: var(--hover-background-color, #fff);
 }
 
 .upload-box::before {
     content: '';
-
     transform: rotate(-45deg);
     transition: all 1s ease;
     opacity: 0;

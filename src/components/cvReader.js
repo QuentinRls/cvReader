@@ -4,6 +4,7 @@ import JobPositionInput from './JobPositionInput';
 import ButtonContainer from './ButtonContainer';
 import formatResult from './formatResult';
 import useFileHandler from './UseFileHandler';
+import { loaderColorsBlue } from '../ressources/ColorVar';
 import "../styling/cvReader.css";
 import Loader from './loader';
 
@@ -61,7 +62,7 @@ function CvReader({ onResult, onClear }) {
 
   return (
     <>
-      <Loader loading={loading ? true : false} />
+      <Loader loading={loading ? true : false} colors={loaderColorsBlue}/>
       <h1 className={loading ? 'BlobTitle' : ''}>
         Bob le Blob, {loading ? "réfléchit... \ncela peux prendre jusqu'a 1 minute à la première utilisation" : "le comparateur de CV & Mission"}
       </h1>
@@ -86,6 +87,10 @@ function CvReader({ onResult, onClear }) {
                       fileURL={cvFileURL}
                       handleFileChange={handleCvFileChange}
                       previewType="pdf"
+                      color="#7fffd49e" 
+                      borderColor="#7fffd49e" 
+                      hoverBorderColor="#7fffd49e" 
+                      hoverBackgroundColor="#232222" 
                     />
                     <FileUploader
                       id="missionFile"
@@ -97,6 +102,8 @@ function CvReader({ onResult, onClear }) {
                       handleFileChange={handleMissionFileChange}
                       previewType="image"
                       required={false}
+                      color="#7fffd49e" 
+                      hoverBackgroundColor="#232222" 
                     />
                   </div>
                   <JobPositionInput

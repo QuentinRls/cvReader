@@ -11,7 +11,6 @@ const formatResult = (data) => {
   let currentBox = [];
 
   lines.forEach((line, index) => {
-    console.log(line);
     if (line.startsWith("**") && (line.endsWith("**") || line.endsWith("** ") || line.endsWith("**  "))) {
       if (currentBox.length > 0) {
         resultComponents.push(

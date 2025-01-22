@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styling/loader.css";
 
-const Loader = ({ loading }) => {
+const Loader = ({ loading, colors = {} }) => {
   const [borderRadius, setBorderRadius] = useState({
     before: "58% 42% 48% 53% / 47% 60% 36% 53%",
     after: "48% 42% 48% 53% / 47% 60% 36% 53%",
@@ -71,7 +71,13 @@ const Loader = ({ loading }) => {
         className={blobClass}
         style={{
           "--border-radius-before": borderRadius.before,
-          "--border-radius-after": borderRadius.after
+          "--border-radius-after": borderRadius.after,
+          "--loader-color1": colors.color1 || '#238a79',
+          "--loader-color2": colors.color2 || '#16425a',
+          "--loader-color3": colors.color3 || '#7aa7c0',
+          "--loader-color4": colors.color4 || '#1cddbd',
+          "--loader-color5": colors.color5 || '#091b25',
+          "--loader-color6": colors.color6 || '#113e68',
         }}
       >
         <div className={loaderClass}

@@ -1,0 +1,188 @@
+.toggle {
+    --s: 40px;
+
+    height: calc(var(--s) + var(--s)/5);
+    width: auto;
+    aspect-ratio: 2.25;
+    border-radius: var(--s);
+    margin: calc(var(--s)/2);
+    display: grid;
+    background-color: #913c6d;
+    cursor: pointer;
+    box-sizing: content-box;
+    overflow: hidden;
+    transition: .3s .1s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: inset -8px -8px 15px rgba(255, 255, 255, .6),
+        inset 10px 10px 10px rgba(58, 9, 43, 0.671);
+}
+
+.toggle-container {
+    justify-self: center;
+    height: 50px;
+    width: 400px;
+    display: flex;
+    padding: 10px 20px;
+    border-radius: 80px;
+    box-shadow: -0px -0px 1px rgba(255, 255, 255, .7),
+        0px 0px 0px rgba(79, 14, 82, 0.596),
+        inset 0px 0px 10px rgba(255, 255, 255, .7),
+        inset 0px 0px 0px rgba(61, 10, 46, 0.63);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle:before {
+    content: "";
+    padding: calc(var(--s)/10);
+    --_g: radial-gradient(circle closest-side at calc(100% - var(--s)/2) 50%, #553d55 96%, #7e121200);
+    background:
+        var(--_g) 0 /var(--_p, var(--s)) 100% no-repeat content-box,
+        var(--_g) var(--_p, 0)/var(--s) 100% no-repeat content-box,
+        #fff;
+    mix-blend-mode: darken;
+    filter: blur(calc(var(--s)/12)) contrast(11);
+    transition: .4s, background-position .4s .1s,
+        padding cubic-bezier(0, calc(var(--_i, -1)*200), 1, calc(var(--_i, -1)*200)) .25s .1s;
+}
+
+.toggle:checked {
+    background-color: #501c40;
+}
+
+.toggle:checked:before {
+    padding: calc(var(--s)/10 + .05px) calc(var(--s)/10);
+    --_p: 100%;
+    --_i: 1;
+}
+
+.interviewText {
+    width: 100px;
+    font-size: 1em;
+    font-weight: bold;
+    color: antiquewhite;
+    text-align: center;
+    margin: 0;
+}
+
+.input-container {
+    margin: 10px;
+    display: flex;
+    place-self: center;
+    flex-direction: row-reverse;
+}
+
+.sendEmailButton {
+    padding: 10px 20px;
+    background-color: #7d587a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.clearBtn {
+    padding: 10px 20px;
+    background-color: #7d587a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.clearBtnContainer {
+    margin-top: 10px;
+    justify-self: center;
+}
+
+.sendEmailButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.sendEmailButton:hover:not(:disabled) {
+    background-color: #c074ba;
+}
+
+.sendEmailContainer {
+    margin-top: 10px;
+    justify-self: center;
+}
+
+.result-containerEmail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    text-align: center;
+    padding: 15px;
+    max-width: 1050px;
+    margin: 0 auto;
+    background: rgb(45 10 47 / 74%);
+    border-radius: 7.5px;
+}
+
+.basic-slide {
+    display: inline-block;
+    width: 215px;
+    padding: 10px 0 10px 15px;
+    font-family: "Open Sans", sans;
+    font-weight: 400;
+    color: #333;
+    background: #efefef;
+    border: 2.5px solid #63344a;
+    border-radius: 3px;
+    outline: 0;
+    transition: all .3s ease-in-out;
+
+    &::-webkit-input-placeholder {
+        color: #efefef;
+        text-indent: 0;
+        font-weight: 300;
+    }
+
+    +label {
+        color: white;
+        display: flex;
+        padding: 8px 15px;
+        text-shadow: 0 1px 0 rgba(19, 74, 70, .4);
+        background: #63344a;
+        transition: all .3s ease-in-out;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+}
+
+.basic-slide:focus,
+.basic-slide:active {
+    color: #377D6A;
+    text-indent: 0;
+    background: #fff;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    &::-webkit-input-placeholder {
+        color: #aaa;
+    }
+
+    +label {
+        transform: translateX(-0px);
+    }
+}
+
+.copyBtn {
+    padding: 10px 20px;
+    background-color: #632e60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.copyBtn:hover {
+    background-color: #271122;
+}

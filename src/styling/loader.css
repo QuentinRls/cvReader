@@ -1,10 +1,10 @@
+/* src/styling/loader.css */
 .blob {
   width: 300px;
   height: 300px;
   margin: 2% auto;
   position: relative;
   color: var(--blob-color, #fff);
-  /* Use the dynamic color */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,7 +12,6 @@
 
 .blob::before {
   border: 2px solid var(--blobColorLine1, #fff);
-  /* Use the dynamic color */
   border-radius: var(--border-radius-before, 58% 42% 48% 53% / 47% 60% 36% 53%);
   width: 100%;
   height: 100%;
@@ -22,12 +21,10 @@
   top: 0;
   animation: rotate 16s linear infinite;
   transition: border-radius 0.5s ease-in-out;
-  /* Ajout de la transition */
 }
 
 .blob::after {
   border: 2px solid var(--blobColorLine22, #fff);
-  /* Use the dynamic color */
   border-radius: var(--border-radius-after, 48% 42% 48% 53% / 47% 60% 36% 53%);
   width: 100%;
   height: 100%;
@@ -38,74 +35,62 @@
   top: 0;
   animation: rotate 15s linear infinite;
   transition: border-radius 0.5s ease-in-out;
-  /* Ajout de la transition */
 }
 
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
-    border-color: #238a79;
-    animation-timing-function: linear;
+    border-color: var(--loader-color1);
   }
 
   10% {
     transform: rotate(36deg);
-    border-color: #16425a;
-    animation-timing-function: linear;
+    border-color: var(--loader-color2);
   }
 
   20% {
     transform: rotate(72deg);
-    border-color: #238a79;
-    animation-timing-function: linear;
+    border-color: var(--loader-color1);
   }
 
   30% {
     transform: rotate(108deg);
-    border-color: #7aa7c0;
-    animation-timing-function: linear;
+    border-color: var(--loader-color3);
   }
 
   40% {
     transform: rotate(140deg);
-    border-color: #1cddbd;
-    animation-timing-function: linear;
+    border-color: var(--loader-color4);
   }
 
   50% {
     transform: rotate(172deg);
-    border-color: #091b25;
-    animation-timing-function: linear;
+    border-color: var(--loader-color5);
   }
 
   60% {
     transform: rotate(204deg);
-    border-color: #238a79;
-    animation-timing-function: linear;
+    border-color: var(--loader-color1);
   }
 
   70% {
     transform: rotate(236deg);
-    border-color: #091b25;
-    animation-timing-function: linear;
+    border-color: var(--loader-color5);
   }
 
   80% {
     transform: rotate(268deg);
-    border-color: #238a79;
-    animation-timing-function: linear;
+    border-color: var(--loader-color1);
   }
 
   90% {
     transform: rotate(300deg);
-    border-color: #091b25;
-    animation-timing-function: linear;
+    border-color: var(--loader-color5);
   }
 
   100% {
     transform: rotate(0deg);
-    border-color: #238a79;
-    animation-timing-function: linear;
+    border-color: var(--loader-color1);
   }
 }
 
@@ -117,74 +102,62 @@
 @keyframes rotate-loading {
   0% {
     transform: rotate(0deg);
-    border-color: #238a79;
-    animation-timing-function: linear;
+    border-color: var(--loader-color1);
   }
 
   10% {
     transform: rotate(120deg);
-    border-color: #16425a;
-    animation-timing-function: linear;
+    border-color: var(--loader-color2);
   }
 
   20% {
     transform: rotate(40deg);
-    border-color: #238a79;
-    animation-timing-function: linear;
+    border-color: var(--loader-color1);
   }
 
   30% {
     transform: rotate(360deg);
-    border-color: #7aa7c0;
-    animation-timing-function: linear;
+    border-color: var(--loader-color3);
   }
 
   40% {
     transform: rotate(300deg);
-    border-color: #1cddbd;
-    animation-timing-function: linear;
+    border-color: var(--loader-color4);
   }
 
   50% {
     transform: rotate(480deg);
-    border-color: #091b25;
-    animation-timing-function: linear;
+    border-color: var(--loader-color5);
   }
 
   60% {
     transform: rotate(300deg);
-    border-color: #238a79;
-    animation-timing-function: linear;
+    border-color: var(--loader-color1);
   }
 
   70% {
     transform: rotate(520deg);
-    border-color: #091b25;
-    animation-timing-function: linear;
+    border-color: var(--loader-color5);
   }
 
   80% {
     transform: rotate(360deg);
-    border-color: #238a79;
-    animation-timing-function: linear;
+    border-color: var(--loader-color1);
   }
 
   90% {
     transform: rotate(680deg);
-    border-color: #091b25;
-    animation-timing-function: linear;
+    border-color: var(--loader-color5);
   }
 
   95% {
     transform: rotate(360deg);
-    border-color: #113e68;
-    animation-timing-function: linear;
+    border-color: var(--loader-color6);
   }
 
   100% {
     transform: rotate(0deg);
-    border-color: #113e68;
-    animation-timing-function: linear;
+    border-color: var(--loader-color6);
   }
 }
 
@@ -237,7 +210,6 @@
   background: #ffffff00;
   mix-blend-mode: darken;
   position: relative;
-  /* Ensure the pseudo-elements are positioned relative to this element */
 }
 
 .loaderChill:before,

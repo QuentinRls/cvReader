@@ -1,9 +1,14 @@
 import React from 'react';
-import "../styling/FileUploader.css";
+import '../styling/FileUploader.css';
 
-const FileUploader = ({ id, name, label, accept, file, fileURL, handleFileChange, previewType, required }) => {
+const FileUploader = ({ id, name, label, accept, file, fileURL, handleFileChange, previewType, required, color, hoverBackgroundColor }) => {
     return (
-        <div className="upload-box">
+        <div className="upload-box" style={{
+            '--color': color || '#000',
+            '--border-color': color || '#000',
+            '--hover-border-color': color || '#000',
+            '--hover-background-color': hoverBackgroundColor || '#fff'
+        }}>
             <label htmlFor={id}>
                 {label}
                 <br />
