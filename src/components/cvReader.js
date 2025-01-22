@@ -63,7 +63,7 @@ function CvReader({ onResult, onClear }) {
     <>
       <Loader loading={loading ? true : false} />
       <h1 className={loading ? 'BlobTitle' : ''}>
-        Bob le Blob, {loading ? "réfléchit..." : "l'évaluateur CV & Mission"}
+        Bob le Blob, {loading ? "réfléchit... \ncela peux prendre jusqu'a 1 minute à la première utilisation" : "le comparateur de CV & Mission"}
       </h1>
       <div className="form-container">
         <>

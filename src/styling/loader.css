@@ -179,7 +179,8 @@
     transform: rotate(360deg);
     border-color: #113e68;
     animation-timing-function: linear;
-  }  
+  }
+
   100% {
     transform: rotate(0deg);
     border-color: #113e68;
@@ -226,6 +227,7 @@
     transform: translate(300%);
   }
 }
+
 .loaderChill {
   width: 150px;
   aspect-ratio: 1;
@@ -234,13 +236,14 @@
   display: grid;
   background: #ffffff00;
   mix-blend-mode: darken;
-  position: relative; /* Ensure the pseudo-elements are positioned relative to this element */
+  position: relative;
+  /* Ensure the pseudo-elements are positioned relative to this element */
 }
 
 .loaderChill:before,
 .loaderChill:after {
   content: "";
-  position: absolute; /* Position the pseudo-elements absolutely within the loaderChill */
+  position: absolute;
   grid-area: 1/1;
   background:
     linear-gradient(#091b25 0 0) left,
@@ -251,41 +254,93 @@
 }
 
 .loaderChill:before {
-  height: calc(40px + (var(--mouse-y) * -0.006)); /* Adjust height based on mouse position */
-  width: calc(20px + (var(--mouse-x) * -0.002)); /* Adjust width based on mouse position */
-  top: 23%; /* Center vertically */
-  left: 0%; /* Position at the left */
-  transform: translate(-50%, -50%); /* Center the element */
+  height: calc(40px + (var(--mouse-y) * -0.006));
+  width: calc(20px + (var(--mouse-x) * -0.002));
+  top: 23%;
+  left: 0%;
+  transform: translate(-50%, -50%);
   border-radius: 40%;
   background: #000000;
-  animation: l11-before 1s forwards;
+  animation: l11-before-15s 15s infinite;
 }
 
 .loaderChill:after {
-  height: calc(40px + (var(--mouse-y) * -0.006)); /* Adjust height based on mouse position */
-  width: calc(20px + (var(--mouse-x) * -0.002)); /* Adjust width based on mouse position */
-  top: 23%; /* Center vertically */
-  left: 40%; /* Position at the right */
-  transform: translate(-50%, -50%); /* Center the element */
+  height: calc(40px + (var(--mouse-y) * -0.006));
+  width: calc(20px + (var(--mouse-x) * -0.002));
+  top: 23%;
+  left: 40%;
+  transform: translate(-50%, -50%);
   border-radius: 40%;
   background: #000000;
-  animation: l11-after 1s forwards;
+  animation: l11-after-15s 15s infinite;
 }
 
-@keyframes l11-before {
+@keyframes l11-before-15s {
   0% {
-    transform: translate(-0%, -0%);
-  }
-  90%, 100% {
     transform: translate(calc(var(--mouse-x) * 0.02), calc(var(--mouse-y) * 0.05));
+  }
+
+  50% {
+    transform: translate(calc(var(--mouse-x) * 0.02), calc(var(--mouse-y) * 0.05));
+  }
+
+  90% {
+    transform: translate(calc(var(--mouse-x) * 0.02), calc(var(--mouse-y) * 0.05)) scaleY(1);
+    transform-origin: center;
+  }
+
+  93% {
+    transform: translate(calc(var(--mouse-x) * 0.02), calc(var(--mouse-y) * 0.05)) scaleY(0.05);
+    transform-origin: center;
+  }
+
+  94% {
+    transform: translate(calc(var(--mouse-x) * 0.02), calc(var(--mouse-y) * 0.05)) scaleY(1);
+    transform-origin: center;
+  }
+
+  97% {
+    transform: translate(calc(var(--mouse-x) * 0.02), calc(var(--mouse-y) * 0.05)) scaleY(0);
+    transform-origin: center;
+  }
+
+  100% {
+    transform: translate(calc(var(--mouse-x) * 0.02), calc(var(--mouse-y) * 0.05)) scaleY(1);
+    transform-origin: center;
   }
 }
 
-@keyframes l11-after {
+@keyframes l11-after-15s {
   0% {
-    transform: translate(-0%, -0%);
-  }
-  90%, 100% {
     transform: translate(calc(var(--mouse-x) * 0.02), calc(var(--mouse-y) * 0.05));
+  }
+
+  50% {
+    transform: translate(calc(var(--mouse-x) * 0.02), calc(var(--mouse-y) * 0.05));
+  }
+
+  90% {
+    transform: translate(calc(var(--mouse-x) * 0.02), calc(var(--mouse-y) * 0.05)) scaleY(1);
+    transform-origin: center;
+  }
+
+  93% {
+    transform: translate(calc(var(--mouse-x) * 0.02), calc(var(--mouse-y) * 0.05)) scaleY(0.05);
+    transform-origin: center;
+  }
+
+  94% {
+    transform: translate(calc(var(--mouse-x) * 0.02), calc(var(--mouse-y) * 0.05)) scaleY(1);
+    transform-origin: center;
+  }
+
+  97% {
+    transform: translate(calc(var(--mouse-x) * 0.02), calc(var(--mouse-y) * 0.05)) scaleY(0);
+    transform-origin: center;
+  }
+
+  100% {
+    transform: translate(calc(var(--mouse-x) * 0.02), calc(var(--mouse-y) * 0.05)) scaleY(1);
+    transform-origin: center;
   }
 }
