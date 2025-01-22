@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/cvReader/static/css/main.03d6e398.css",
-    "main.js": "/cvReader/static/js/main.9719867d.js",
+    "main.css": "/cvReader/static/css/main.6a12146a.css",
+    "main.js": "/cvReader/static/js/main.468cba6c.js",
     "index.html": "/cvReader/index.html",
-    "main.03d6e398.css.map": "/cvReader/static/css/main.03d6e398.css.map",
-    "main.9719867d.js.map": "/cvReader/static/js/main.9719867d.js.map"
+    "main.6a12146a.css.map": "/cvReader/static/css/main.6a12146a.css.map",
+    "main.468cba6c.js.map": "/cvReader/static/js/main.468cba6c.js.map"
   },
   "entrypoints": [
-    "static/css/main.03d6e398.css",
-    "static/js/main.9719867d.js"
+    "static/css/main.6a12146a.css",
+    "static/js/main.468cba6c.js"
   ]
 }
