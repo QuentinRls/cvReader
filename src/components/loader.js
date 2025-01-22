@@ -14,13 +14,11 @@ const Loader = ({ loading }) => {
     let value;
 
     if (isLoading) {
-      // Generate values specifically for loading state
       value = Math.floor(Math.random() * (max - min + 1)) + min;
       if (value >= 45 && value <= 55) {
         value = value < 30 ? 70 : 75;
       }
     } else {
-      // Generate normal random values
       value = Math.floor(Math.random() * (max - min + 1)) + min;
       if (value >= 45 && value <= 55) {
         value = value > 50 ? 45 : 47;

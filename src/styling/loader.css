@@ -1,7 +1,7 @@
 .blob {
   width: 300px;
   height: 300px;
-  margin: 10% auto;
+  margin: 2% auto;
   position: relative;
   color: var(--blob-color, #fff);
   /* Use the dynamic color */
@@ -111,7 +111,7 @@
 
 .blob.loading::before,
 .blob.loading::after {
-  animation: rotate-loading 5s linear infinite;
+  animation: rotate-loading 15s linear infinite;
 }
 
 @keyframes rotate-loading {
@@ -122,59 +122,64 @@
   }
 
   10% {
-    transform: rotate(36deg);
+    transform: rotate(120deg);
     border-color: #16425a;
     animation-timing-function: linear;
   }
 
   20% {
-    transform: rotate(72deg);
+    transform: rotate(40deg);
     border-color: #238a79;
     animation-timing-function: linear;
   }
 
   30% {
-    transform: rotate(108deg);
+    transform: rotate(360deg);
     border-color: #7aa7c0;
     animation-timing-function: linear;
   }
 
   40% {
-    transform: rotate(140deg);
+    transform: rotate(300deg);
     border-color: #1cddbd;
     animation-timing-function: linear;
   }
 
   50% {
-    transform: rotate(172deg);
+    transform: rotate(480deg);
     border-color: #091b25;
     animation-timing-function: linear;
   }
 
   60% {
-    transform: rotate(204deg);
+    transform: rotate(300deg);
     border-color: #238a79;
     animation-timing-function: linear;
   }
 
   70% {
-    transform: rotate(236deg);
+    transform: rotate(520deg);
     border-color: #091b25;
     animation-timing-function: linear;
   }
 
   80% {
-    transform: rotate(268deg);
+    transform: rotate(360deg);
     border-color: #238a79;
     animation-timing-function: linear;
   }
 
   90% {
-    transform: rotate(300deg);
+    transform: rotate(680deg);
     border-color: #091b25;
     animation-timing-function: linear;
   }
 
+  95% {
+    transform: rotate(360deg);
+    border-color: #113e68;
+    animation-timing-function: linear;
+  }  
   100% {
     transform: rotate(0deg);
     border-color: #113e68;

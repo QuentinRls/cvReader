@@ -50,7 +50,7 @@ const formatResult = (data) => {
             text={`${percentage}`}
             styles={buildStyles({
               textSize: '16px',
-              pathColor: `rgba(127, 255, 212, ${value / 100})`,
+              pathColor: `rgb(19 76 81)`,
               textColor: '#ffff',
               trailColor: '#d6d6d6',
               backgroundColor: '#3e98c7',
@@ -75,7 +75,9 @@ const formatResult = (data) => {
     );
   }
 
-  return resultComponents;
+  return (
+      resultComponents
+  );
 };
 
 export default formatResult;

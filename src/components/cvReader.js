@@ -60,65 +60,62 @@ function CvReader({ onResult, onClear }) {
   };
 
   return (
-    <div className="form-container">
-      {!loading ? <Loader /> : <></>}
+    <>
+      <Loader loading={loading ? true : false} />
       <h1 className={loading ? 'BlobTitle' : ''}>
-        {loading ? <div class="thinking" /> : <></>}
-        Bob le Blob {loading ? "réfléchit" : "l'évaluateur CV & Mission"}
-        {loading ? <div class="thinking2" /> : <></>}
+        Bob le Blob, {loading ? "réfléchit..." : "l'évaluateur CV & Mission"}
       </h1>
-      {loading ? (
-        <Loader loading={true} />
-      ) : (
+      <div className="form-container">
         <>
           {result && (
             <div className="result-container">
               <div className="result-boxes">{formatResult(result)}</div>
             </div>
           )}
-          <form onSubmit={handleSubmit} className="form">
-            {!result && (
-              <>
-                <div className='images-container'>
-                  <FileUploader
-                    id="fileInput"
-                    name="cvFile"
-                    label="Cliquez pour télécharger ou glissez et déposez votre CV ici"
-                    accept=".pdf,.docx"
-                    file={cvFile}
-                    fileURL={cvFileURL}
-                    handleFileChange={handleCvFileChange}
-                    previewType="pdf"
+          {!loading ?
+            <form onSubmit={handleSubmit} className="form">
+              {!result && (
+                <>
+                  <div className='images-container'>
+                    <FileUploader
+                      id="fileInput"
+                      name="cvFile"
+                      label="Cliquez pour télécharger ou glissez et déposez votre CV ici"
+                      accept=".pdf,.docx"
+                      file={cvFile}
+                      fileURL={cvFileURL}
+                      handleFileChange={handleCvFileChange}
+                      previewType="pdf"
+                    />
+                    <FileUploader
+                      id="missionFile"
+                      name="missionFile"
+                      label="Cliquez pour télécharger ou glissez et déposez votre mission ici"
+                      accept="image/*"
+                      file={missionFile}
+                      fileURL={missionFileURL}
+                      handleFileChange={handleMissionFileChange}
+                      previewType="image"
+                      required={false}
+                    />
+                  </div>
+                  <JobPositionInput
+                    jobPosition={jobPosition}
+                    setJobPosition={setJobPosition}
                   />
-                  <FileUploader
-                    id="missionFile"
-                    name="missionFile"
-                    label="Cliquez pour télécharger ou glissez et déposez votre mission ici"
-                    accept="image/*"
-                    file={missionFile}
-                    fileURL={missionFileURL}
-                    handleFileChange={handleMissionFileChange}
-                    previewType="image"
-                    required={false} // Retirer l'attribut required
-                  />
-                </div>
-                <JobPositionInput
-                  jobPosition={jobPosition}
-                  setJobPosition={setJobPosition}
-                />
-              </>
-            )}
-            <ButtonContainer
-              loading={loading}
-              handleClear={handleClear}
-              file={cvFile}
-              missionFile={missionFile}
-              jobPosition={jobPosition}
-            />
-          </form>
+                </>
+              )}
+              <ButtonContainer
+                loading={loading}
+                handleClear={handleClear}
+                file={cvFile}
+                missionFile={missionFile}
+                jobPosition={jobPosition}
+              />
+            </form> : <></>}
         </>
-      )}
-    </div>
+      </div>
+    </>
   );
 }
 

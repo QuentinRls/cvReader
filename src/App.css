@@ -1,23 +1,11 @@
 body {
   margin: auto;
   overflow: auto;
-  background: linear-gradient(315deg, rgb(7, 58, 58) 3%, rgb(7, 58, 58) 38%, rgb(19, 91, 104) 68%, rgb(7, 58, 58) 98%);
-  background-color: rgb(7, 58, 58); /* Couleur de fond de secours */
-  animation: gradient 60s ease infinite;
+  background: linear-gradient(315deg, rgb(11, 64, 73) 3%, rgb(7, 58, 58) 38%, rgb(15, 70, 80) 68%, rgba(26, 81, 95, 0.39) 98%);
+  background-color: rgb(11, 64, 73);
+  animation: gradient 10s ease infinite;
   background-size: 400% 400%;
   background-attachment: fixed;
-}
-
-@keyframes gradient {
-  0% {
-      background-position: 0% 0%;
-  }
-  50% {
-      background-position: 100% 100%;
-  }
-  100% {
-      background-position: 0% 0%;
-  }
 }
 
 .wave {
@@ -48,24 +36,48 @@ body {
 
 @keyframes wave {
   2% {
-      transform: translateX(1);
+    transform: translateX(1);
   }
   25% {
-      transform: translateX(-25%);
+    transform: translateX(-25%);
   }
   50% {
-      transform: translateX(-50%);
+    transform: translateX(-50%);
   }
   75% {
-      transform: translateX(-25%);
+    transform: translateX(-25%);
   }
   100% {
-      transform: translateX(1);
+    transform: translateX(1);
   }
 }
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.component-container {
+  margin-top: 20px;
+  transition: opacity 0.3s ease;
+}
+
+.component-container.fade-in {
+  opacity: 1;
+}
+
+.component-container.fade-out {
+  opacity: 0;
+}
+
 .App-header {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,15 +86,22 @@ body {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-header nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-header nav ul li {
+  display: inline;
+}
+
+.App-header nav ul li a {
+  color: #61dafb;
+  text-decoration: none;
+}
+
+.App-header nav ul li a:hover {
+  text-decoration: underline;
 }
