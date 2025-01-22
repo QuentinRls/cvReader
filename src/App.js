@@ -14,7 +14,7 @@ function App() {
     document.body.style.background = backgroundColor;
     document.body.style.backgroundColor = background;;
     document.body.style.backgroundSize = '400% 400%';
-    document.body.style.animation = 'gradient 10s ease infinite';
+    document.body.style.animation = 'gradient 60s ease infinite';
     document.body.style.backgroundAttachment = 'fixed';
   }, [backgroundColor, background]);
 
