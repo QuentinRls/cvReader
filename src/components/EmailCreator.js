@@ -64,15 +64,6 @@ const EmailCreator = ({ onResult, onClear }) => {
         }
     };
 
-    const handleCopy = () => {
-        const resultText = document.querySelector('.result-boxes').innerText;
-        navigator.clipboard.writeText(resultText).then(() => {
-            alert('Texte copié dans le presse-papiers');
-        }).catch(err => {
-            console.error('Erreur lors de la copie du texte :', err);
-        });
-    };
-
     return (
         <>
             <Loader loading={loading} colors={loaderColorsRed} />
@@ -119,8 +110,7 @@ const EmailCreator = ({ onResult, onClear }) => {
             )}
             {result && (<>
                 <div className="result-containerEmail">
-                    <div className="result-boxes">{formatResult(result)}</div>
-                    <button className="copyBtn" onClick={handleCopy}>Copier</button>
+                    <div className="result-boxes">{formatResult(result, true)}</div>
                 </div>
                 <div className='clearBtnContainer'>
                     <button className="clearBtn" onClick={handleClear}>Réinitialiser</button>

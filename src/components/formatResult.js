@@ -1,15 +1,17 @@
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import SlCopyButton from '@shoelace-style/shoelace/dist/react/copy-button';
 import 'react-circular-progressbar/dist/styles.css';
 import React from 'react';
 import '../styling/FormatResult.css';
 
-const formatResult = (data) => {
+
+const formatResult = (data, copy) => {
   if (!data || !data.analysis) return <div>Aucun résultat disponible</div>;
 
   const lines = data.analysis.split("\n");
   const resultComponents = [];
   let currentBox = [];
-
+  console.log(data.analysis);
   lines.forEach((line, index) => {
     if (line.startsWith("**") && (line.endsWith("**") || line.endsWith("** ") || line.endsWith("**  "))) {
       if (currentBox.length > 0) {
@@ -69,13 +71,18 @@ const formatResult = (data) => {
   if (currentBox.length > 0) {
     resultComponents.push(
       <div key={`box-${lines.length}`} className="result-box">
+        {copy && (
+          <div className="copy-button-container">
+            <SlCopyButton value={data.analysis}/>
+          </div>
+        )}
         {currentBox}
       </div>
     );
   }
 
   return (
-      resultComponents
+    resultComponents
   );
 };
 
