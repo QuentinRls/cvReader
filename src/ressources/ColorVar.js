@@ -8,12 +8,12 @@ export const loaderColorsBlue = {
 };
 
 export const loaderColorsRed = {
-    color1: 'rgb(255, 204, 229)',
+    color1: 'rgb(105, 41, 72)',
     color2: 'rgb(77, 49, 63)',
     color3: 'rgb(95, 33, 64)',
     color4: 'rgb(85, 19, 52)',
-    color5: 'rgb(255, 204, 229)',
-    color6: 'rgb(255, 255, 255)'
+    color5: 'rgb(63, 14, 38)',
+    color6: 'rgb(121, 27, 89)'
 };
 
 export const loaderColorsOrange = {
@@ -30,6 +30,6 @@ export const loaderColorsBlueViolet = {
     color2: 'rgb(54, 54, 87)',
     color3: 'rgb(40, 40, 104)',
     color4: 'rgb(15, 15, 83)',
-    color5: 'rgb(204, 204, 255)',
+    color5: 'rgb(100, 100, 212)',
     color6: 'rgba(204, 204, 255, 0.25)'
 };
