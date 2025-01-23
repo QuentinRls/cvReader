@@ -78,6 +78,8 @@ const Loader = ({ loading, colors = {} }) => {
           "--loader-color4": colors.color4 || '#1cddbd',
           "--loader-color5": colors.color5 || '#091b25',
           "--loader-color6": colors.color6 || '#113e68',
+          "--loader-color7": colors.color7 || '#1c646c4d',
+
         }}
       >
         <div className={loaderClass}

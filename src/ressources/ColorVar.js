@@ -4,7 +4,8 @@ export const loaderColorsBlue = {
     color3: '#7aa7c0',
     color4: '#1cddbd',
     color5: '#091b25',
-    color6: '#113e68'
+    color6: '#113e68',
+    color7: 'rgba(56, 110, 114, 0.39)'
 };
 
 export const loaderColorsRed = {
@@ -13,7 +14,8 @@ export const loaderColorsRed = {
     color3: 'rgb(95, 33, 64)',
     color4: 'rgb(85, 19, 52)',
     color5: 'rgb(63, 14, 38)',
-    color6: 'rgb(121, 27, 89)'
+    color6: 'rgb(121, 27, 89)',
+    color7: 'rgba(121, 27, 90, 0.32)'
 };
 
 export const loaderColorsOrange = {
@@ -22,7 +24,8 @@ export const loaderColorsOrange = {
     color3: 'rgb(100, 68, 42)',
     color4: 'rgb(95, 55, 22) 98%)',
     color5: '#BF360C', // Darkest Orange
-    color6: '#FF5722' 
+    color6: '#FF5722',
+    color7: '#FF5722'
 };
 
 export const loaderColorsBlueViolet = {
@@ -31,5 +34,6 @@ export const loaderColorsBlueViolet = {
     color3: 'rgb(40, 40, 104)',
     color4: 'rgb(15, 15, 83)',
     color5: 'rgb(100, 100, 212)',
-    color6: 'rgba(204, 204, 255, 0.25)'
+    color6: 'rgba(204, 204, 255, 0.25)',
+    color7: 'rgba(56, 110, 114, 0.39)'
 };

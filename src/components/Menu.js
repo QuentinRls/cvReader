@@ -30,7 +30,7 @@ const Menu = ({ onMenuItemClick }) => {
             </svg>
           </label>
           <div className="menu-items">
-            <div className="menu-item" onClick={() => handleMenuItemClick(<EmailCreator />, 'linear-gradient(315deg, rgb(255, 204, 229) 3%, rgb(77, 49, 63) 38%, rgb(95, 33, 64) 68%, rgb(85, 19, 52) 98%)', 'rgb(255, 204, 229)', 'rgb(255 255 255 / 25%)')}>
+            <div className="menu-item" onClick={() => handleMenuItemClick(<EmailCreator />, 'linear-gradient(315deg, rgba(71, 39, 55, 0.66) 3%, rgb(77, 49, 63) 38%, rgb(95, 33, 64) 68%, rgb(85, 19, 52) 98%)', 'rgb(255, 204, 229)', 'rgb(255 255 255 / 25%)')}>
               <img className="menu-icon" alt='cv' src={EmailIcon} />
             </div>
             <div className="menu-item" onClick={() => handleMenuItemClick(<CvReader />, 'linear-gradient(315deg, rgb(11, 64, 73) 3%, rgb(7, 58, 58) 38%, rgb(15, 70, 80) 68%, rgba(26, 81, 95, 0.39) 98%)', 'rgb(10, 55, 63)', 'rgb(255 255 255 / 25%)')}>

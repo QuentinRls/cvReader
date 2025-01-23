@@ -102,7 +102,7 @@ const EmailCreator = ({ onResult, onClear }) => {
                         </div>
                         <div className='sendEmailContainer'>
                             <button className="sendEmailButton" type="submit" disabled={loading}>
-                                {loading ? 'Envoi en cours...' : 'Envoyer'}
+                                {loading ? 'Envoi en cours...' : 'Rédiger'}
                             </button>
                         </div>
                     </form>

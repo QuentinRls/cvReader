@@ -1,0 +1,58 @@
+.pres-pack {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+
+}
+
+.presentation-container {
+    max-width: 800px;
+    margin: 0 50px;
+    padding: 20px;
+    background-color: #2b2b2bb8;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: aliceblue;
+  }
+  
+  .presentation-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .presentation-container h2 {
+    font-size: 1.8em;
+    margin-top: 20px;
+  }
+  
+  .presentation-container p {
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
+  
+  .presentation-container ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .presentation-container ul li {
+    place-self: center;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .presentation-container a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+  .presentation-container a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 1500px) {
+    .presentation-container {
+      margin: 0 10px;
+    }
+  }

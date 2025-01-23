@@ -9,7 +9,7 @@ input {
 
 path {
   fill: none;
-  stroke: #092925;
+  stroke: #0000006c;
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -59,6 +59,8 @@ path {
 }
 
 .svgClass {
+  border-radius: 60px;
+    border: solid #0000006c;
   width: 100px;
   height: 100px;
   cursor: pointer;

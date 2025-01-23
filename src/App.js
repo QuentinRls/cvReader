@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import Presentation from './components/Presentation';
 import Menu from './components/Menu';
-import CvReader from './components/CvReader';
 import './App.css';
 
 function App() {
-  const [activeComponent, setActiveComponent] = useState(<CvReader />);
+  const [activeComponent, setActiveComponent] = useState(<Presentation />);
   const [background, setBackground] = useState('rgb(10, 55, 63)');
   const [backgroundColor, setBackgroundColor] = useState('linear-gradient(315deg, rgb(11, 64, 73) 3%, rgb(7, 58, 58) 38%, rgb(15, 70, 80) 68%, rgba(26, 81, 95, 0.39) 98%)');
   const [waveColor, setWaveColor] = useState('rgb(255 255 255 / 25%)');

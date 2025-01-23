@@ -6,6 +6,7 @@ body {
   animation: gradient 10s ease infinite;
   background-size: 400% 400%;
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 
 .wave {

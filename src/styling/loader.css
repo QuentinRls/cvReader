@@ -28,7 +28,7 @@
   border-radius: var(--border-radius-after, 48% 42% 48% 53% / 47% 60% 36% 53%);
   width: 100%;
   height: 100%;
-  background: rgba(57, 105, 93, 0.192);
+  background: var(--loader-color7);
   content: '';
   position: absolute;
   left: 0;
